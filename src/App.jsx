@@ -376,9 +376,9 @@ export default function App() {
           <div className="absolute top-[-100px] left-[-60px] text-[140px] opacity-10 pointer-events-none select-none rotate-12">🍛</div>
           <div className="absolute top-[-60px] right-[-60px] text-[140px] opacity-10 pointer-events-none select-none -rotate-12">🌶️</div>
           <div className="absolute bottom-[-80px] left-[-160px] text-[140px] opacity-10 pointer-events-none select-none -rotate-12">🦐</div>
-          <div className="absolute bottom-[-80px] right-[-160px] text-[140px] opacity-10 pointer-events-none select-none rotate-12">🍽️</div>
+          <div className="absolute bottom-[-80px] right-[-160px] text-[140px] opacity-20 pointer-events-none select-none rotate-12">🍽️</div>
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <AnimSection>
               <div className="text-center mb-14">
                 <div className="nunito text-amber-600 text-xs tracking-[0.3em] uppercase mb-3">
@@ -390,45 +390,47 @@ export default function App() {
               </div>
             </AnimSection>
 
-            <div className="grid md:grid-cols-3 gap-10 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-5 items-center justify-items-center w-full">
 
-              {/* Card 1 */}
-              <AnimSection delay={0.1}>
-                <div className="relative rounded-2xl p-9 border border-amber-900/30 overflow-hidden">
-
-                  <img src="/Chef.png" alt="Chef" className="absolute inset-0 w-full h-200 object-cover" />
-                  <div className="absolute inset-0 bg-black/50"></div>
-
-                  <div className="relative z-10">
-                    <h3 className="playfair text-2xl text-amber-50 mb-4">
+              {/* Card 1 - BIG */}
+              <AnimSection delay={0.1} className="md:col-span-2 w-full">
+                <div className="relative rounded-2xl border border-amber-900/30 mr-4 overflow-hidden h-[120px] md:h-[250px] w-full">
+                  <img
+                    src="/Chef.png"
+                    alt="Chef"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/50" />
+                  <div className="relative z-10 h-full flex items-center justify-center text-center p-6">
+                    <h3 className="playfair text-2xl md:text-3xl text-amber-50">
                       Cooked with Passion
                     </h3>
-                   
                   </div>
                 </div>
               </AnimSection>
 
-              {/* Quote */}
-              <AnimSection delay={0.2}>
-                <div className="text-center">
-                  <blockquote className="playfair text-xl text-amber-700 italic">
+              {/* Quote - SMALL */}
+              <AnimSection delay={0.2} className="md:col-span-1 w-full">
+                <div className="text-center px-4">
+                  <blockquote className="playfair text-lg md:text-xl text-amber-700 italic">
                     "Where every meal feels like home and every bite tells a story of authentic Andhra flavors."
                   </blockquote>
                 </div>
               </AnimSection>
 
-              {/* Card 2 */}
-              <AnimSection delay={0.3}>
-                <div className="relative rounded-2xl p-9 border border-amber-900/30 overflow-hidden">
-
-                  <img src="/family.png" alt="Family Dining" className="absolute inset-0 w-full h-100 object-cover" />
-                  <div className="absolute inset-0 bg-black/50"></div>
-
-                  <div className="relative z-10">
-                    <h3 className="playfair text-2xl text-amber-50 mb-4">
+              {/* Card 2 - BIG */}
+              <AnimSection delay={0.3} className="md:col-span-2 w-full">
+                <div className="relative rounded-2xl border border-amber-900/30 overflow-hidden h-[120px] md:h-[250px] w-full">
+                  <img
+                    src="/family.png"
+                    alt="Family Dining"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/50 w-full h-full" />
+                  <div className="relative z-10 h-full flex items-center justify-center text-center p-6">
+                    <h3 className="playfair text-2xl md:text-3xl text-amber-50">
                       A Family Destination
                     </h3>
-                   
                   </div>
                 </div>
               </AnimSection>
