@@ -323,16 +323,16 @@ export default function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
 
         {/* Content */}
-        <div className="text-center max-w-3xl px-6 relative z-10">
+        <div className="text-center max-w-3xl px-6 relative z-10 w-full">
           <div className="nunito text-amber-400 text-xs tracking-[0.3em] uppercase mb-5 opacity-90">
             ✦ Since Kakinada ✦
           </div>
 
-          <h1 className="playfair text-4xl md:text-6xl font-black leading-tight mb-5">
+          <h1 className="playfair text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-5 w-full">
             <span className="text-amber-50">అమృతం </span>
             <span className="gold-text">ఫ్యామిలీ</span>
             <br />
-            <span className="text-amber-50 mt-10 text-3xl">రెస్టారెంట్</span>
+            <span className="text-amber-50 text-2xl sm:text-3xl md:text-5xl">రెస్టారెంట్</span>
           </h1>
 
           <p className="nunito text-lg text-amber-300/80 mb-3">
@@ -350,6 +350,7 @@ export default function App() {
             >
               🍽️ View Menu
             </button>
+
 
             <button
               onClick={() => scrollTo("contact")}
@@ -394,11 +395,11 @@ export default function App() {
 
               {/* Card 1 - BIG */}
               <AnimSection delay={0.1} className="md:col-span-2 w-full">
-                <div className="relative rounded-2xl border border-amber-900/30 mr-4 overflow-hidden h-[120px] md:h-[250px] w-full">
+                <div className="relative rounded-2xl border border-amber-900/30 mr-4 overflow-hidden h-[100px] md:h-[250px] w-full">
                   <img
                     src="/Chef.png"
                     alt="Chef"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-fit"
                   />
                   <div className="absolute inset-0 bg-black/50" />
                   <div className="relative z-10 h-full flex items-center justify-center text-center p-6">
@@ -424,7 +425,7 @@ export default function App() {
                   <img
                     src="/family.png"
                     alt="Family Dining"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-fit"
                   />
                   <div className="absolute inset-0 bg-black/50 w-full h-full" />
                   <div className="relative z-10 h-full flex items-center justify-center text-center p-6">
