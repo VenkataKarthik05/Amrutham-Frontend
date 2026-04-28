@@ -245,7 +245,7 @@ export default function App() {
               <span className="playfair text-amber-400 text-2xl font-black">
                 AMRUTHAM
               </span>
-              <span className="nunito text-amber-800 text-xs tracking-widest uppercase">
+              <span className="nunito text-white text-xs tracking-widest uppercase -mt-1">
                 Family Restaurant
               </span>
             </div>
@@ -328,11 +328,11 @@ export default function App() {
             ✦ Since Kakinada ✦
           </div>
 
-          <h1 className="playfair text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-5 w-full">
+          <h1 className="playfair text-3xl sm:text-4xl md:text-6xl font-black leading-tight p-3 w-full">
             <span className="text-amber-50">అమృతం </span>
             <span className="gold-text">ఫ్యామిలీ</span>
             <br />
-            <span className="text-amber-50 text-2xl sm:text-3xl md:text-5xl">రెస్టారెంట్</span>
+            <span className="text-amber-50 text-2xl mt-5 sm:text-3xl md:text-4xl">రెస్టారెంట్</span>
           </h1>
 
           <p className="nunito text-lg text-amber-300/80 mb-3">
@@ -345,7 +345,7 @@ export default function App() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <button
-              onClick={() => scrollTo("menu")}
+              onClick={() => scrollTo("explore-menu")}
               className="bg-gradient-to-r from-amber-500 to-amber-700 text-black font-bold px-8 py-3 rounded-full"
             >
               🍽️ View Menu
@@ -516,7 +516,7 @@ export default function App() {
       </section>
 
       {/* ── FULL MENU ── */}
-      <section className="bg-stone-900 py-24 px-6">
+      <section id="explore-menu" className="bg-stone-900 py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <AnimSection>
             <div className="text-center mb-12">
