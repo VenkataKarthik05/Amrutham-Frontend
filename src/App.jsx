@@ -396,16 +396,14 @@ export default function App() {
               <AnimSection delay={0.1}>
                 <div className="relative rounded-2xl p-9 border border-amber-900/30 overflow-hidden">
 
-                  <img src="/Chef.png" alt="Chef" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src="/Chef.png" alt="Chef" className="absolute inset-0 w-full h-200 object-cover" />
                   <div className="absolute inset-0 bg-black/50"></div>
 
                   <div className="relative z-10">
                     <h3 className="playfair text-2xl text-amber-50 mb-4">
                       Cooked with Passion
                     </h3>
-                    <p className="nunito text-amber-200 text-sm">
-                      At Amrutham Family Restaurant, every dish is crafted with love using hand-ground masalas, farm-fresh ingredients, and traditional Andhra cooking techniques.
-                    </p>
+                   
                   </div>
                 </div>
               </AnimSection>
@@ -423,16 +421,14 @@ export default function App() {
               <AnimSection delay={0.3}>
                 <div className="relative rounded-2xl p-9 border border-amber-900/30 overflow-hidden">
 
-                  <img src="/family.png" alt="Family Dining" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src="/family.png" alt="Family Dining" className="absolute inset-0 w-full h-100 object-cover" />
                   <div className="absolute inset-0 bg-black/50"></div>
 
                   <div className="relative z-10">
                     <h3 className="playfair text-2xl text-amber-50 mb-4">
                       A Family Destination
                     </h3>
-                    <p className="nunito text-amber-200 text-sm">
-                      Nestled at Bhanugudi Junction, Kakinada, we've become the city's favorite gathering spot for families and food lovers.
-                    </p>
+                   
                   </div>
                 </div>
               </AnimSection>
