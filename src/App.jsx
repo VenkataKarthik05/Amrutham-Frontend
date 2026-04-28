@@ -328,11 +328,11 @@ export default function App() {
             ✦ Since Kakinada ✦
           </div>
 
-          <h1 className="playfair text-5xl md:text-6xl font-black leading-tight mb-5">
+          <h1 className="playfair text-4xl md:text-6xl font-black leading-tight mb-5">
             <span className="text-amber-50">అమృతం </span>
             <span className="gold-text">ఫ్యామిలీ</span>
             <br />
-            <span className="text-amber-50 mt-3 text-4xl">రెస్టారెంట్</span>
+            <span className="text-amber-50 mt-10 text-3xl">రెస్టారెంట్</span>
           </h1>
 
           <p className="nunito text-lg text-amber-300/80 mb-3">
