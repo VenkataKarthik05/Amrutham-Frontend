@@ -307,7 +307,7 @@ export default function App() {
       {/* ── HERO ── */}
       <section
         id="home"
-        className="relative h-lvh flex items-center justify-center overflow-hidden pt-20"
+        className="relative h-lvh flex items-center justify-center overflow-visible pt-20"
       >
         {/* Background Image */}
         <img
@@ -328,9 +328,9 @@ export default function App() {
             ✦ Since Kakinada ✦
           </div>
 
-          <h1 className="playfair text-4xl sm:text-2xl md:text-6xl font-black leading-tight p-3 w-full">
+          <h1 className=" text-4xl sm:text-2xl md:text-6xl font-black leading-tight p-3 w-full">
             <span className="text-amber-50">అమృతం </span>
-            <span className="gold-text">ఫ్యామిలీ</span>
+            <span className="gold-text p-6 mb-10">ఫ్యామిలీ</span>
             <br />
             <span className="text-amber-50 text-2xl mt-5 sm:text-3xl md:text-4xl">రెస్టారెంట్</span>
           </h1>
