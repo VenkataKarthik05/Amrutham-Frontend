@@ -190,7 +190,7 @@ export default function App() {
   const [menuCat, setMenuCat] = useState(0);
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", guests: "2", date: "", time: "" });
+  const [form, setForm] = useState({ name: "", nameError: "", phone: "", phoneError: "", guests: "", date: "", time: "" });
   const [submitted, setSubmitted] = useState(false);
 
 
@@ -328,7 +328,7 @@ export default function App() {
             ✦ Since Kakinada ✦
           </div>
 
-          <h1 className="playfair text-3xl sm:text-4xl md:text-6xl font-black leading-tight p-3 w-full">
+          <h1 className="playfair text-4xl sm:text-2xl md:text-6xl font-black leading-tight p-3 w-full">
             <span className="text-amber-50">అమృతం </span>
             <span className="gold-text">ఫ్యామిలీ</span>
             <br />
@@ -376,8 +376,8 @@ export default function App() {
           {/* Corner Icons */}
           <div className="absolute top-[-100px] left-[-60px] text-[140px] opacity-10 pointer-events-none select-none rotate-12">🍛</div>
           <div className="absolute top-[-60px] right-[-60px] text-[140px] opacity-10 pointer-events-none select-none -rotate-12">🌶️</div>
-          <div className="absolute bottom-[-80px] left-[-160px] text-[140px] opacity-10 pointer-events-none select-none -rotate-12">🦐</div>
-          <div className="absolute bottom-[-80px] right-[-160px] text-[140px] opacity-20 pointer-events-none select-none rotate-12">🍽️</div>
+          <div className="absolute bottom-[-120px] md:bottom-[-140px] left-[30px] md:left-[-10px] text-[80px] md:text-[140px] opacity-10 pointer-events-none select-none -rotate-12">🦐</div>
+          <div className="absolute bottom-[-120px] md:bottom-[-140px] right-[-10px] text-[80px] md:text-[140px] opacity-20 pointer-events-none select-none rotate-12">🍽️</div>
 
           <div className="max-w-7xl mx-auto">
             <AnimSection>
@@ -411,7 +411,7 @@ export default function App() {
               </AnimSection>
 
               {/* Quote - SMALL */}
-              <AnimSection delay={0.2} className="md:col-span-1 w-full">
+              <AnimSection delay={0.2} className="md:col-span-1 px-2 w-full">
                 <div className="text-center px-4">
                   <blockquote className="playfair text-lg md:text-xl text-amber-700 italic">
                     "Where every meal feels like home and every bite tells a story of authentic Andhra flavors."
@@ -453,15 +453,15 @@ export default function App() {
           🍲
         </div>
 
-        <div className="absolute top-[-60px] right-[10px] text-[140px] opacity-15 pointer-events-none select-none -rotate-12">
+        <div className="absolute top-[40px] right-[10px] text-[140px] opacity-15 pointer-events-none select-none -rotate-12">
           🍗
         </div>
 
-        <div className="absolute bottom-[-60px] left-[10px] text-[140px] opacity-15 pointer-events-none select-none -rotate-12">
+        <div className="absolute bottom-[10px] md:bottom-[-60px] left-[10px] text-[80px] md:text-[140px]  opacity-15 pointer-events-none select-none -rotate-12">
           🦐
         </div>
 
-        <div className="absolute bottom-[-60px] right-[10px] text-[140px] opacity-15 pointer-events-none select-none rotate-12">
+        <div className="absolute bottom-[10px] md:bottom-[-60px] right-[10px] text-[80px] md:text-[140px] opacity-15 pointer-events-none select-none rotate-12">
           🍽️
         </div>
         <div className="relative z-10 max-w-6xl mx-auto">
@@ -516,8 +516,46 @@ export default function App() {
       </section>
 
       {/* ── FULL MENU ── */}
-      <section id="explore-menu" className="bg-stone-900 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
+      {/* ── FULL MENU ── */}
+      <section id="explore-menu" className="relative py-24 px-6 overflow-hidden" style={{ background: '#0d0905' }}>
+
+        {/* Radial glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(180,100,20,0.15) 0%, transparent 70%)'
+        }} />
+
+        {/* Floating food icons from MENU_CATEGORIES data */}
+        {[
+          { icon: '🔥', top: '6%', left: '4%', size: '2rem', opacity: 0.10, rotate: -10 },
+          { icon: '🍛', top: '12%', left: '20%', size: '1.5rem', opacity: 0.09, rotate: 15 },
+          { icon: '🥡', top: '8%', left: '40%', size: '1.6rem', opacity: 0.11, rotate: -8 },
+          { icon: '🦞', top: '5%', left: '65%', size: '1.4rem', opacity: 0.10, rotate: 20 },
+          { icon: '🍜', top: '10%', left: '82%', size: '1.7rem', opacity: 0.12, rotate: -15 },
+          { icon: '🍲', top: '35%', left: '2%', size: '1.5rem', opacity: 0.09, rotate: 12 },
+          { icon: '🥘', top: '50%', left: '14%', size: '1.3rem', opacity: 0.08, rotate: -20 },
+          { icon: '🍱', top: '38%', left: '88%', size: '1.6rem', opacity: 0.10, rotate: -12 },
+          { icon: '🥗', top: '60%', left: '78%', size: '1.4rem', opacity: 0.09, rotate: 18 },
+          { icon: '🍗', top: '72%', left: '5%', size: '1.5rem', opacity: 0.10, rotate: 8 },
+          { icon: '🥩', top: '78%', left: '28%', size: '1.3rem', opacity: 0.08, rotate: -14 },
+          { icon: '🍝', top: '82%', left: '52%', size: '1.6rem', opacity: 0.09, rotate: 22 },
+          { icon: '🦐', top: '76%', left: '72%', size: '1.4rem', opacity: 0.11, rotate: -6 },
+          { icon: '🍴', top: '85%', left: '90%', size: '1.5rem', opacity: 0.10, rotate: 30 },
+          { icon: '🧆', top: '45%', left: '48%', size: '1.2rem', opacity: 0.06, rotate: 45 },
+        ].map((f, i) => (
+          <div
+            key={i}
+            className="absolute pointer-events-none select-none"
+            style={{
+              top: f.top, left: f.left, fontSize: f.size, opacity: f.opacity,
+              transform: `rotate(${f.rotate}deg)`,
+              filter: 'sepia(1) saturate(0.5) brightness(1.4)',
+            }}
+          >
+            {f.icon}
+          </div>
+        ))}
+
+        <div className="max-w-4xl mx-auto relative z-10">
           <AnimSection>
             <div className="text-center mb-12">
               <div className="nunito text-amber-400 text-xs tracking-[0.3em] uppercase mb-3">✦ Full Menu ✦</div>
@@ -536,7 +574,7 @@ export default function App() {
                   onClick={() => setMenuCat(i)}
                   className={`nunito px-6 py-2.5 rounded-full font-bold text-sm border transition-all duration-300 ${menuCat === i
                     ? "bg-gradient-to-r from-amber-500 to-amber-700 text-stone-900 border-transparent"
-                    : "bg-stone-950 text-amber-700 border-amber-900/40 hover:border-amber-700"
+                    : "bg-stone-950/60 text-amber-700 border-amber-900/40 hover:border-amber-700"
                     }`}
                 >
                   {cat.icon} {cat.cat}
@@ -546,7 +584,7 @@ export default function App() {
           </AnimSection>
 
           <AnimSection delay={0.2}>
-            <div className="bg-stone-950 rounded-2xl p-8 border border-amber-900/25">
+            <div className="bg-stone-950/80 backdrop-blur-sm rounded-2xl p-8 border border-amber-900/25">
               <div className="grid sm:grid-cols-2 gap-0.5">
                 {MENU_CATEGORIES[menuCat].items.map((item) => (
                   <div
@@ -574,15 +612,51 @@ export default function App() {
       <div className="section-divider" />
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="bg-stone-900 py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+      {/* ── WHY CHOOSE US ── */}
+      <section className="relative py-24 px-6 overflow-hidden" style={{ background: '#0d0905' }}>
 
+        {/* Radial glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(180,100,20,0.15) 0%, transparent 70%)'
+        }} />
+
+        {/* Floating icons derived from WHY_CHOOSE titles */}
+        {[
+          { icon: '🌶️', top: '5%', left: '3%', size: '2rem', opacity: 0.10, rotate: -12 },
+          { icon: '⭐', top: '10%', left: '22%', size: '1.5rem', opacity: 0.09, rotate: 10 },
+          { icon: '💰', top: '7%', left: '45%', size: '1.4rem', opacity: 0.10, rotate: -5 },
+          { icon: '⚡', top: '4%', left: '68%', size: '1.6rem', opacity: 0.11, rotate: 18 },
+          { icon: '👨‍👩‍👧‍👦', top: '9%', left: '84%', size: '1.5rem', opacity: 0.09, rotate: -8 },
+          { icon: '🍽️', top: '38%', left: '1%', size: '1.7rem', opacity: 0.10, rotate: 15 },
+          { icon: '🧂', top: '52%', left: '10%', size: '1.3rem', opacity: 0.08, rotate: -18 },
+          { icon: '🫙', top: '40%', left: '91%', size: '1.5rem', opacity: 0.09, rotate: -10 },
+          { icon: '🔪', top: '58%', left: '82%', size: '1.4rem', opacity: 0.08, rotate: 35 },
+          { icon: '🥄', top: '70%', left: '4%', size: '1.5rem', opacity: 0.10, rotate: 8 },
+          { icon: '🫕', top: '78%', left: '24%', size: '1.3rem', opacity: 0.09, rotate: -14 },
+          { icon: '🍲', top: '83%', left: '50%', size: '1.6rem', opacity: 0.10, rotate: 20 },
+          { icon: '🥘', top: '75%', left: '72%', size: '1.4rem', opacity: 0.09, rotate: -7 },
+          { icon: '🍛', top: '87%', left: '88%', size: '1.5rem', opacity: 0.10, rotate: 25 },
+          { icon: '🌿', top: '46%', left: '48%', size: '1.2rem', opacity: 0.06, rotate: 45 },
+        ].map((f, i) => (
+          <div
+            key={i}
+            className="absolute pointer-events-none select-none"
+            style={{
+              top: f.top, left: f.left, fontSize: f.size, opacity: f.opacity,
+              transform: `rotate(${f.rotate}deg)`,
+              filter: 'sepia(1) saturate(0.5) brightness(1.4)',
+            }}
+          >
+            {f.icon}
+          </div>
+        ))}
+
+        <div className="max-w-5xl mx-auto relative z-10">
           <AnimSection>
             <div className="text-center mb-16">
               <div className="nunito text-amber-400 text-xs tracking-[0.3em] uppercase mb-3">
                 ✦ Why Amrutham ✦
               </div>
-
               <h2 className="playfair text-5xl font-bold text-amber-50">
                 Why Choose <span className="gold-text">Us</span>
               </h2>
@@ -592,40 +666,70 @@ export default function App() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {WHY_CHOOSE.map((w, i) => {
               const Icon = w.icon;
-
               return (
                 <AnimSection key={w.title} delay={i * 0.07}>
-                  <div className="bg-stone-900 rounded-2xl p-7 border border-amber-900/25 text-center hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300">
-
-                    {/* ICON */}
+                  <div className="bg-stone-950/70 backdrop-blur-sm rounded-2xl p-7 border border-amber-900/25 text-center hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300">
                     <Icon className="text-amber-500 text-4xl mb-4 mx-auto" />
-
-                    {/* TITLE */}
-                    <h3 className="playfair text-lg text-amber-50 mb-2.5">
-                      {w.title}
-                    </h3>
-
-                    {/* DESCRIPTION */}
-                    <p className="nunito text-amber-700 text-sm leading-relaxed">
-                      {w.desc}
-                    </p>
-
+                    <h3 className="playfair text-lg text-amber-50 mb-2.5">{w.title}</h3>
+                    <p className="nunito text-amber-700 text-sm leading-relaxed">{w.desc}</p>
                   </div>
                 </AnimSection>
               );
             })}
           </div>
-
         </div>
       </section>
 
       {/* ── GALLERY ── */}
-      <section id="gallery" className="bg-gradient-to-b from-[#F5E6C8] via-[#EAD7B0] to-[#F5E6C8] rounded py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section id="gallery" className="relative rounded py-24 px-6 overflow-hidden" style={{ background: '#1a0e05' }}>
+
+        {/* Radial glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(180,100,20,0.18) 0%, transparent 70%)'
+        }} />
+
+        {/* Floating food icons */}
+        {[
+          { icon: '🍽️', top: '8%', left: '5%', size: '2rem', opacity: 0.12, rotate: -15 },
+          { icon: '🥘', top: '15%', left: '18%', size: '1.4rem', opacity: 0.10, rotate: 10 },
+          { icon: '🍷', top: '6%', left: '35%', size: '1.6rem', opacity: 0.13, rotate: -8 },
+          { icon: '🫕', top: '20%', left: '55%', size: '1.3rem', opacity: 0.09, rotate: 20 },
+          { icon: '🍴', top: '10%', left: '72%', size: '1.8rem', opacity: 0.14, rotate: 30 },
+          { icon: '🥗', top: '5%', left: '88%', size: '1.5rem', opacity: 0.11, rotate: -5 },
+          { icon: '🍲', top: '40%', left: '2%', size: '1.6rem', opacity: 0.10, rotate: 12 },
+          { icon: '🧆', top: '55%', left: '12%', size: '1.3rem', opacity: 0.09, rotate: -20 },
+          { icon: '🍛', top: '35%', left: '90%', size: '1.7rem', opacity: 0.12, rotate: -10 },
+          { icon: '🥩', top: '60%', left: '80%', size: '1.4rem', opacity: 0.10, rotate: 15 },
+          { icon: '🍜', top: '75%', left: '6%', size: '1.5rem', opacity: 0.11, rotate: 8 },
+          { icon: '🧁', top: '80%', left: '25%', size: '1.3rem', opacity: 0.09, rotate: -12 },
+          { icon: '🍱', top: '85%', left: '50%', size: '1.6rem', opacity: 0.10, rotate: 18 },
+          { icon: '🥂', top: '78%', left: '70%', size: '1.4rem', opacity: 0.12, rotate: -7 },
+          { icon: '🍰', top: '82%', left: '88%', size: '1.5rem', opacity: 0.11, rotate: 22 },
+          { icon: '🔪', top: '45%', left: '50%', size: '1.2rem', opacity: 0.07, rotate: 45 },
+          { icon: '🫙', top: '30%', left: '75%', size: '1.3rem', opacity: 0.08, rotate: -18 },
+          { icon: '🥄', top: '65%', left: '40%', size: '1.4rem', opacity: 0.08, rotate: 35 },
+        ].map((f, i) => (
+          <div
+            key={i}
+            className="absolute pointer-events-none select-none"
+            style={{
+              top: f.top,
+              left: f.left,
+              fontSize: f.size,
+              opacity: f.opacity,
+              transform: `rotate(${f.rotate}deg)`,
+              filter: 'sepia(1) saturate(0.5) brightness(1.4)',
+            }}
+          >
+            {f.icon}
+          </div>
+        ))}
+
+        <div className="max-w-5xl mx-auto relative z-10">
           <AnimSection>
             <div className="text-center mb-16">
-              <div className="nunito text-black text-xs tracking-[0.3em] uppercase mb-3">✦ Visual Feast ✦</div>
-              <h2 className="playfair text-5xl font-bold text-black">
+              <div className="nunito text-amber-400 text-xs tracking-[0.3em] uppercase mb-3">✦ Visual Feast ✦</div>
+              <h2 className="playfair text-5xl font-bold text-white">
                 Food <span className="gold-text">Gallery</span>
               </h2>
             </div>
@@ -643,9 +747,7 @@ export default function App() {
                     alt={item.label}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-
-                  <div className="absolute inset-0 bg-black/40"></div>
-
+                  <div className="absolute inset-0 bg-black/40" />
                   <div className="relative z-10 flex items-end justify-center h-full pb-2">
                     <span className="text-amber-200 text-xs font-semibold">
                       {item.label}
@@ -770,38 +872,130 @@ export default function App() {
                   </div>
                 ) : (
                   <form onSubmit={handleForm} className="flex flex-col gap-4">
+
+                    {/* Name */}
                     <div>
-                      <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">Your Name *</label>
-                      <input placeholder="Full Name" value={form.name} required onChange={e => setForm({ ...form, name: e.target.value })} />
+                      <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">
+                        Your Name *
+                      </label>
+                      <input
+                        placeholder="Full Name"
+                        value={form.name}
+                        required
+                        onChange={e => {
+                          const val = e.target.value;
+                          if (/^[a-zA-Z\s]*$/.test(val)) {
+                            setForm({ ...form, name: val, nameError: '' });
+                          } else {
+                            setForm({ ...form, nameError: 'Name must contain only letters' });
+                          }
+                        }}
+                        className={`w-full bg-black/40 border  text-white placeholder:text-slate-300 px-4 py-2 rounded-lg outline-none focus:ring-2 focus:ring-amber-600`}
+                      />
+                      {form.nameError && (
+                        <p className="text-red-500 text-xs mt-1">{form.nameError}</p>
+                      )}
                     </div>
+
+                    {/* Phone */}
                     <div>
-                      <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">Phone Number *</label>
-                      <input placeholder="+91 XXXXX XXXXX" type="tel" value={form.phone} required onChange={e => setForm({ ...form, phone: e.target.value })} />
+                      <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">
+                        Phone Number *
+                      </label>
+                      <input
+                        placeholder="+91 XXXXX XXXXX"
+                        type="tel"
+                        value={form.phone}
+                        required
+                        onChange={e => {
+                          const val = e.target.value;
+                          if (/^[0-9+\s]*$/.test(val)) {
+                            setForm({ ...form, phone: val, phoneError: '' });
+                          } else {
+                            setForm({ ...form, phoneError: 'Phone number must contain only digits' });
+                          }
+                        }}
+                        onBlur={() => {
+                          if (form.phone && form.phone.replace(/\D/g, '').length < 10) {
+                            setForm({ ...form, phoneError: 'Phone number must be at least 10 digits' });
+                          }
+                        }}
+                        maxLength={15}
+                        className={`w-full bg-black/40 border text-white placeholder:text-slate-300 px-4 py-2 rounded-lg outline-none focus:ring-2 focus:ring-amber-600`}
+                      />
+                      {form.phoneError && (
+                        <p className="text-red-500 text-xs mt-1">{form.phoneError}</p>
+                      )}
                     </div>
+
+                    {/* Guests + Date */}
                     <div className="grid grid-cols-2 gap-3">
+
+                      {/* Guests */}
                       <div>
-                        <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">Guests</label>
-                        <select value={form.guests} onChange={e => setForm({ ...form, guests: e.target.value })}>
+                        <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">
+                          Guests
+                        </label>
+                        <select
+                          value={form.guests}
+                          onChange={e => setForm({ ...form, guests: e.target.value })}
+                          className="w-full bg-black/40 border border-amber-900/30 text-slate-300 px-4 py-2 rounded-lg outline-none focus:ring-2 focus:ring-amber-600 appearance-none"
+                          style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d97706' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'right 12px center',
+                            paddingRight: '36px'
+                          }}
+                        >
+                          <option value="" disabled hidden className="bg-black  placeholder:text-slate-500">
+                            Select Guests
+                          </option>
                           {["1", "2", "3", "4", "5", "6", "7", "8", "10+"].map(n => (
-                            <option key={n} value={n}>{n} {n === "1" ? "Guest" : "Guests"}</option>
+                            <option key={n} value={n} className="bg-black text-slate-500">
+                              {n} {n === "1" ? "Guest" : "Guests"}
+                            </option>
                           ))}
                         </select>
                       </div>
+
+                      {/* Date */}
                       <div>
-                        <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">Date</label>
-                        <input type="date" value={form.date} required onChange={e => setForm({ ...form, date: e.target.value })} />
+                        <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">
+                          Date
+                        </label>
+                        <input
+                          type="date"
+                          value={form.date}
+                          required
+                          onChange={e => setForm({ ...form, date: e.target.value })}
+                          style={{ colorScheme: 'dark' }}
+                          className="w-full bg-black/40 border border-amber-900/30 text-slate-300 px-4 py-2 rounded-lg outline-none focus:ring-2 focus:ring-amber-600"
+                        />
                       </div>
                     </div>
+
+                    {/* Time */}
                     <div>
-                      <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">Preferred Time</label>
-                      <input type="time" value={form.time} onChange={e => setForm({ ...form, time: e.target.value })} />
+                      <label className="nunito text-xs text-amber-700 tracking-widest uppercase block mb-1.5">
+                        Preferred Time
+                      </label>
+                      <input
+                        type="time"
+                        value={form.time}
+                        onChange={e => setForm({ ...form, time: e.target.value })}
+                        style={{ colorScheme: 'dark' }}
+                        className="w-full bg-black/40 border border-amber-900/30 text-slate-300 placeholder:text-slate-500 px-4 py-2 rounded-lg outline-none focus:ring-2 focus:ring-amber-600"
+                      />
                     </div>
+
+                    {/* Button */}
                     <button
                       type="submit"
                       className="nunito mt-2 bg-gradient-to-r from-amber-500 to-amber-700 text-stone-900 font-bold text-base py-4 rounded-xl hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300"
                     >
                       🍽️ Reserve My Table
                     </button>
+
                   </form>
                 )}
               </div>
