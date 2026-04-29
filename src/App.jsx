@@ -330,7 +330,7 @@ export default function App() {
 
           <h1 className=" text-4xl sm:text-2xl md:text-6xl font-black leading-tight p-3 w-full">
             <span className="text-amber-50">అమృతం </span>
-            <span className="gold-text p-6 mb-10">ఫ్యామిలీ</span>
+            <span className="gold-text p-2 mb-10">ఫ్యామిలీ</span>
             <br />
             <span className="text-amber-50 text-2xl mt-5 sm:text-3xl md:text-4xl">రెస్టారెంట్</span>
           </h1>
